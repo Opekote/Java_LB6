@@ -85,7 +85,7 @@ public class Cinema {
                     System.out.print(cinemaSeats[hallNumber-1][i][j] + " ");
                 }
             }
-            System.out.printf("| %2d", i);
+            System.out.printf("| %2d", i+1);
 
             System.out.println();
 
