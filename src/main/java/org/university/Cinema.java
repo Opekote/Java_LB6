@@ -93,7 +93,7 @@ public class Cinema {
                 }
                 System.out.print("\u001B[0m"); // Reset color and background
             }
-            System.out.printf("| %2d", i+1);
+            System.out.printf(" | %2d", i+1);
 
             System.out.println();
 
