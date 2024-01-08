@@ -77,13 +77,21 @@ public class Cinema {
             System.out.printf("%2d | ", i+1);
 
             // Showing Seats in a row
-            for (int j = 0; j < cinemaSeats[hallNumber-1][i].length; j++) {
-                if (j >= 9){
-                    System.out.printf("%2d ", cinemaSeats[hallNumber-1][i][j]);
+            for (int j = 0; j < cinemaSeats[hallNumber - 1][i].length; j++) {
+                String colorCode;
+                if (cinemaSeats[hallNumber - 1][i][j] == 0) {
+                    colorCode = "\u001B[40;32m"; // Black background, green text for available place
+                } else {
+                    colorCode = "\u001B[43;31m"; // Yellow background, red text for not available places
                 }
-                else {
-                    System.out.print(cinemaSeats[hallNumber-1][i][j] + " ");
+
+                System.out.print(colorCode);
+                if (j >= 9) {
+                    System.out.printf("%2d ", cinemaSeats[hallNumber - 1][i][j]); // Padding for numbers >= 10
+                } else {
+                    System.out.print(cinemaSeats[hallNumber - 1][i][j] + " ");
                 }
+                System.out.print("\u001B[0m"); // Reset color and background
             }
             System.out.printf("| %2d", i+1);
 
